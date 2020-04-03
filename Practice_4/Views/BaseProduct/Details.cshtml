@@ -1,0 +1,38 @@
+﻿@model Practice_4.Models.BaseProduct
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Подробности</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <div class="form-group">
+        @Html.ActionLink("Назад", "Index", "Products", null, new { @class = "btn btn-success" })
+        @Html.ActionLink("Редактировать", "Edit", null, new { id = Model.Id }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Удалить", "Delete",null, new { id = Model.Id }, new { @class = "btn btn-danger", @onclick = "return confirm('Вы действительно хотите удалить продукт ?')" })
+
+    </div>
+</p>
